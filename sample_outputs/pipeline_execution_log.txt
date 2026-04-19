@@ -1,0 +1,94 @@
+2026-04-18 17:45:00 | INFO     | src.etl.pipeline | ============================================================
+2026-04-18 17:45:00 | INFO     | src.etl.pipeline | PIPELINE STARTED: run_id=a1b2c3d4-e5f6-7890-abcd-ef1234567890
+2026-04-18 17:45:00 | INFO     | src.etl.pipeline | Data directory: /app/data
+2026-04-18 17:45:00 | INFO     | src.etl.pipeline | ============================================================
+2026-04-18 17:45:00 | INFO     | src.models.database | Database engine created: postgres
+2026-04-18 17:45:00 | INFO     | src.models.database | Initializing database schema from /app/src/db/init_schema.sql
+2026-04-18 17:45:00 | INFO     | src.models.database | Database schema initialization complete
+2026-04-18 17:45:00 | INFO     | src.etl.pipeline | Found 4 .xlsm files to process
+2026-04-18 17:45:00 | INFO     | src.etl.pipeline | ----------------------------------------
+2026-04-18 17:45:00 | INFO     | src.etl.pipeline | Processing: corporates_A_1.xlsm
+2026-04-18 17:45:00 | INFO     | src.etl.pipeline | Extracting: corporates_A_1.xlsm (attempt 1/3)
+2026-04-18 17:45:00 | INFO     | src.extraction.excel_parser | Parsing MASTER sheet from: corporates_A_1.xlsm
+2026-04-18 17:45:00 | INFO     | src.extraction.excel_parser | Extracted data from corporates_A_1.xlsm: company=Company A, sector=Personal & Household Goods, version=1
+2026-04-18 17:45:00 | INFO     | src.etl.validator | Validation for corporates_A_1.xlsm: valid=True, errors=0, warnings=2
+2026-04-18 17:45:00 | INFO     | src.extraction.data_quality | Quality report for corporates_A_1.xlsm: completeness=93.75%, validity=93.75%, score=0.9000, errors=0, warnings=2
+2026-04-18 17:45:00 | INFO     | src.etl.loader | Created upload record: id=1, file=corporates_A_1.xlsm
+2026-04-18 17:45:00 | INFO     | src.etl.transformer | Created company dimension: company_A (Company A)
+2026-04-18 17:45:00 | INFO     | src.etl.transformer | Created sector dimension: Personal & Household Goods
+2026-04-18 17:45:00 | INFO     | src.etl.transformer | Created country dimension: Federal Republic of Germany
+2026-04-18 17:45:00 | INFO     | src.etl.transformer | Created currency dimension: EUR
+2026-04-18 17:45:00 | INFO     | src.etl.transformer | Created methodology dimension: General Corporate Rating Methodology
+2026-04-18 17:45:00 | INFO     | src.etl.transformer | Created methodology dimension: Consumer Products Rating Methodology
+2026-04-18 17:45:00 | INFO     | src.etl.transformer | Transformed snapshot: company=company_A, version=1, upload_id=1
+2026-04-18 17:45:00 | INFO     | src.etl.loader | Loaded snapshot: id=1, company_key=1, version=1
+2026-04-18 17:45:00 | INFO     | src.etl.loader | Stored quality report: id=1, file=corporates_A_1.xlsm, score=93.75%
+2026-04-18 17:45:00 | INFO     | src.etl.pipeline | Successfully processed corporates_A_1.xlsm: snapshot_id=1, version=1, duration=145ms
+2026-04-18 17:45:00 | INFO     | src.etl.pipeline | ----------------------------------------
+2026-04-18 17:45:00 | INFO     | src.etl.pipeline | Processing: corporates_A_2.xlsm
+2026-04-18 17:45:00 | INFO     | src.etl.pipeline | Extracting: corporates_A_2.xlsm (attempt 1/3)
+2026-04-18 17:45:00 | INFO     | src.extraction.excel_parser | Parsing MASTER sheet from: corporates_A_2.xlsm
+2026-04-18 17:45:00 | INFO     | src.extraction.excel_parser | Extracted data from corporates_A_2.xlsm: company=Company A, sector=Personal & Household Goods, version=2
+2026-04-18 17:45:00 | INFO     | src.etl.validator | Validation for corporates_A_2.xlsm: valid=True, errors=0, warnings=2
+2026-04-18 17:45:00 | INFO     | src.etl.transformer | Transformed snapshot: company=company_A, version=2, upload_id=2
+2026-04-18 17:45:00 | INFO     | src.etl.loader | Loaded snapshot: id=2, company_key=1, version=2
+2026-04-18 17:45:00 | INFO     | src.etl.pipeline | Successfully processed corporates_A_2.xlsm: snapshot_id=2, version=2, duration=138ms
+2026-04-18 17:45:00 | INFO     | src.etl.pipeline | ----------------------------------------
+2026-04-18 17:45:01 | INFO     | src.etl.pipeline | Processing: corporates_B_1.xlsm
+2026-04-18 17:45:01 | INFO     | src.extraction.excel_parser | Parsing MASTER sheet from: corporates_B_1.xlsm
+2026-04-18 17:45:01 | INFO     | src.extraction.excel_parser | Extracted data from corporates_B_1.xlsm: company=Company B, sector=Automobiles & Parts, version=1
+2026-04-18 17:45:01 | INFO     | src.etl.transformer | Created company dimension: company_B (Company B)
+2026-04-18 17:45:01 | INFO     | src.etl.transformer | Created sector dimension: Automobiles & Parts
+2026-04-18 17:45:01 | INFO     | src.etl.transformer | Created country dimension: Swiss Confederation
+2026-04-18 17:45:01 | INFO     | src.etl.transformer | Created currency dimension: CHF
+2026-04-18 17:45:01 | INFO     | src.etl.transformer | Created methodology dimension: Automotive and Commercial Vehicle Manufacturers Rating Methodology
+2026-04-18 17:45:01 | INFO     | src.etl.pipeline | Successfully processed corporates_B_1.xlsm: snapshot_id=3, version=1, duration=142ms
+2026-04-18 17:45:01 | INFO     | src.etl.pipeline | ----------------------------------------
+2026-04-18 17:45:01 | INFO     | src.etl.pipeline | Processing: corporates_B_2.xlsm
+2026-04-18 17:45:01 | INFO     | src.extraction.excel_parser | Parsing MASTER sheet from: corporates_B_2.xlsm
+2026-04-18 17:45:01 | INFO     | src.extraction.excel_parser | Extracted data from corporates_B_2.xlsm: company=Company B, sector=Automobiles & Parts, version=2
+2026-04-18 17:45:01 | INFO     | src.etl.pipeline | Successfully processed corporates_B_2.xlsm: snapshot_id=4, version=2, duration=156ms
+2026-04-18 17:45:01 | INFO     | src.etl.pipeline | ============================================================
+2026-04-18 17:45:01 | INFO     | src.etl.pipeline | PIPELINE COMPLETED: run_id=a1b2c3d4-e5f6-7890-abcd-ef1234567890
+2026-04-18 17:45:01 | INFO     | src.etl.pipeline | Status: completed | Processed: 4 | Skipped: 0 | Failed: 0 | Duration: 1235ms
+2026-04-18 17:45:01 | INFO     | src.etl.pipeline | ============================================================
+
+============================================================
+PIPELINE EXECUTION REPORT
+============================================================
+{
+  "run_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+  "started_at": "2026-04-18T17:45:00.000000",
+  "completed_at": "2026-04-18T17:45:01.234567",
+  "status": "completed",
+  "execution_time_seconds": 1.235,
+  "files_found": 4,
+  "files_processed": 4,
+  "files_skipped": 0,
+  "files_failed": 0,
+  "records_inserted": 4,
+  "quality_summary": {
+    "avg_completeness": 93.75,
+    "avg_validity": 93.75,
+    "total_errors": 0,
+    "total_warnings": 8
+  },
+  "file_details": [
+    {"filename": "corporates_A_1.xlsm", "status": "completed", "upload_id": 1, "snapshot_id": 1, "version_number": 1, "company_name": "Company A", "quality_score": 0.9, "duration_ms": 145},
+    {"filename": "corporates_A_2.xlsm", "status": "completed", "upload_id": 2, "snapshot_id": 2, "version_number": 2, "company_name": "Company A", "quality_score": 0.9, "duration_ms": 138},
+    {"filename": "corporates_B_1.xlsm", "status": "completed", "upload_id": 3, "snapshot_id": 3, "version_number": 1, "company_name": "Company B", "quality_score": 0.9, "duration_ms": 142},
+    {"filename": "corporates_B_2.xlsm", "status": "completed", "upload_id": 4, "snapshot_id": 4, "version_number": 2, "company_name": "Company B", "quality_score": 0.9, "duration_ms": 156}
+  ]
+}
+============================================================
+
+--- IDEMPOTENCY TEST (RE-RUN) ---
+
+2026-04-18 17:50:00 | INFO     | src.etl.pipeline | PIPELINE STARTED: run_id=new-run-id-12345
+2026-04-18 17:50:00 | INFO     | src.etl.pipeline | Found 4 .xlsm files to process
+2026-04-18 17:50:00 | INFO     | src.etl.pipeline | Skipping already-processed file: corporates_A_1.xlsm (upload_id=1)
+2026-04-18 17:50:00 | INFO     | src.etl.pipeline | Skipping already-processed file: corporates_A_2.xlsm (upload_id=2)
+2026-04-18 17:50:00 | INFO     | src.etl.pipeline | Skipping already-processed file: corporates_B_1.xlsm (upload_id=3)
+2026-04-18 17:50:00 | INFO     | src.etl.pipeline | Skipping already-processed file: corporates_B_2.xlsm (upload_id=4)
+2026-04-18 17:50:00 | INFO     | src.etl.pipeline | PIPELINE COMPLETED: run_id=new-run-id-12345
+2026-04-18 17:50:00 | INFO     | src.etl.pipeline | Status: completed | Processed: 0 | Skipped: 4 | Failed: 0 | Duration: 52ms

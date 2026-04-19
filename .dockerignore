@@ -1,0 +1,16 @@
+.git
+__pycache__
+*.pyc
+*.pyo
+.env
+.venv
+venv
+.idea
+.vscode
+*.egg-info
+.DS_Store
+.gitignore
+tests/
+sample_outputs/
+*.md
+!requirements.txt

@@ -1,0 +1,53 @@
+services:
+  # ============================================================================
+  # PostgreSQL Data Warehouse
+  # ============================================================================
+  postgres:
+    image: postgres:15-alpine
+    container_name: credit_rating_db
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-credit_rating_dw}
+      POSTGRES_USER: ${POSTGRES_USER:-pipeline_user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-pipeline_secret_2024}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-pipeline_user} -d ${POSTGRES_DB:-credit_rating_dw}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+    restart: unless-stopped
+
+  # ============================================================================
+  # FastAPI Application + ETL Pipeline
+  # ============================================================================
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: credit_rating_api
+    environment:
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
+      POSTGRES_DB: ${POSTGRES_DB:-credit_rating_dw}
+      POSTGRES_USER: ${POSTGRES_USER:-pipeline_user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-pipeline_secret_2024}
+      DATA_DIR: /app/data
+      LOG_LEVEL: INFO
+      API_HOST: 0.0.0.0
+      API_PORT: 8000
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data:ro
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+    driver: local

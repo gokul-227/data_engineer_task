@@ -1,0 +1,84 @@
+{
+  "pipeline_run": {
+    "run_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+    "started_at": "2026-04-18T17:45:00.000000",
+    "completed_at": "2026-04-18T17:45:01.234567",
+    "status": "completed",
+    "execution_time_seconds": 1.235,
+    "files_found": 4,
+    "files_processed": 4,
+    "files_skipped": 0,
+    "files_failed": 0,
+    "records_inserted": 4
+  },
+  "quality_summary": {
+    "avg_completeness": 93.75,
+    "avg_validity": 93.75,
+    "total_errors": 0,
+    "total_warnings": 8
+  },
+  "file_reports": [
+    {
+      "filename": "corporates_A_1.xlsm",
+      "assessed_at": "2026-04-18T17:45:00.123456",
+      "completeness_pct": 93.75,
+      "validity_pct": 93.75,
+      "quality_score": 0.9,
+      "total_fields_checked": 16,
+      "present_fields": 15,
+      "missing_fields": 1,
+      "valid_fields": 15,
+      "invalid_fields": 1,
+      "error_count": 0,
+      "warning_count": 2,
+      "errors": [],
+      "warnings": [
+        "Recommended field missing: 'sector_specific_factor_2'",
+        "Credit metric 'Scope-adjusted loan/value' has missing data for years: ['2023']"
+      ],
+      "field_details": {
+        "company_name": {"required": true, "present": true, "valid": true, "value": "Company A"},
+        "sector": {"required": true, "present": true, "valid": true, "value": "Personal & Household Goods"},
+        "currency": {"required": true, "present": true, "valid": true, "value": "EUR"},
+        "country": {"required": true, "present": true, "valid": true, "value": "Federal Republic of Germany"},
+        "accounting_principles": {"required": true, "present": true, "valid": true, "value": "IFRS"},
+        "year_end_month": {"required": true, "present": true, "valid": true, "value": "December"},
+        "business_risk_profile": {"required": false, "present": true, "valid": true, "value": "B+"},
+        "financial_risk_profile": {"required": false, "present": true, "valid": true, "value": "C"},
+        "blended_industry_risk_profile": {"required": false, "present": true, "valid": true, "value": "A"},
+        "competitive_positioning": {"required": false, "present": true, "valid": true, "value": "B+"},
+        "leverage": {"required": false, "present": true, "valid": true, "value": "CCC"},
+        "interest_cover": {"required": false, "present": true, "valid": true, "value": "B-"},
+        "cash_flow_cover": {"required": false, "present": true, "valid": true, "value": "CCC"},
+        "liquidity": {"required": false, "present": true, "valid": true, "value": "-2 notches"},
+        "segmentation_criteria": {"required": false, "present": true, "valid": true, "value": "EBITDA contribution"},
+        "rating_methodologies": {"required": true, "present": true, "valid": true, "value": "General Corporate Rating Methodology; Consumer Products Rating Methodology"},
+        "industry_risk_weights_sum": {"required": true, "present": true, "valid": true, "value": "1.0000"}
+      }
+    },
+    {
+      "filename": "corporates_A_2.xlsm",
+      "completeness_pct": 93.75,
+      "validity_pct": 93.75,
+      "quality_score": 0.9,
+      "error_count": 0,
+      "warning_count": 2
+    },
+    {
+      "filename": "corporates_B_1.xlsm",
+      "completeness_pct": 93.75,
+      "validity_pct": 93.75,
+      "quality_score": 0.9,
+      "error_count": 0,
+      "warning_count": 2
+    },
+    {
+      "filename": "corporates_B_2.xlsm",
+      "completeness_pct": 93.75,
+      "validity_pct": 93.75,
+      "quality_score": 0.9,
+      "error_count": 0,
+      "warning_count": 3
+    }
+  ]
+}
